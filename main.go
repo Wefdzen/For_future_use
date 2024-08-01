@@ -11,7 +11,6 @@ import (
 )
 
 func main() {
-	fmt.Println(cfg.PGaddress)
 	urlToDataBase := fmt.Sprintf("postgres://%v:%v@%v:%v/%v", cfg.PGuser, cfg.PGpassword, cfg.PGaddress, cfg.PGPort, cfg.PGdbname)
 	conn, err := pgx.Connect(context.Background(), urlToDataBase)
 	if err != nil {
